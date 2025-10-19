@@ -1,6 +1,8 @@
 # BlockChainMiner
 
 This Bitcoin simulator lets you mine Bitcoins with the sha256 library!
+===========================================================================
+
 
 
 # How to Use?
