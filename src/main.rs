@@ -10,7 +10,6 @@ use std::time::Duration;
  // Define the difficulty level for mining
  const DIFFICULTY: usize = 2;
 
-
  // Creates the structure of a Block
  struct Block {
      index: u32,
