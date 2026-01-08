@@ -1,19 +1,14 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: blockchain-rust-deployment
+  name: blockchain-rust-job
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: blockchain-rust
   template:
     metadata:
       labels:
         app: blockchain-rust
     spec:
+      restartPolicy: Never
       containers:
       - name: blockchain-rust
         image: semyo/blockchain-rust:latest
-        ports:
-        - containerPort: 8080
