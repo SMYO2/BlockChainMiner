@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockchain-rust-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: blockchain-rust
+  template:
+    metadata:
+      labels:
+        app: blockchain-rust
+    spec:
+      containers:
+      - name: blockchain-rust
+        image: semyo/blockchain-rust:latest
+        ports:
+        - containerPort: 8080
