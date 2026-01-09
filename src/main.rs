@@ -137,7 +137,7 @@ fn main() {
     println!("\n Starting the mining process... \n");
 
     // Creates a list for the trader names that you can trade with
-    let trader_names: Vec<&str> = vec!["Alice", "Peter", "Charlie", "Dave", "Eve", "John", "Mia", "Sophia", "Liam", "Noah", "Shawn"];
+    let trader_names: Vec<&str> = vec!["Alice", "Peter", "Charlie", "Dave", "Eve", "John", "Mia", "Sophia", "Liam", "Noah", "Shawn", "Mike", "Emma", "Olivia"];
     
     // Sets the initial sender as the user's name
     let mut sender: String = name.clone();

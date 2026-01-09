@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: semyo/blockchain-rust
   pullPolicy: IfNotPresent
-  tag: "V1.0"
+  tag: "V2.0"
 
 imagePullSecrets: []
 nameOverride: ""
