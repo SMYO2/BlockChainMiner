@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "blockchain-job.fullname" . }}
+  labels:
+    app: blockchain-rust
+spec:
+  template:
+    metadata:
+      labels:
+        app: blockchain-rust
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: blockchain-rust
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default "latest" }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
