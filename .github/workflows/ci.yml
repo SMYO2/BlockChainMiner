@@ -54,23 +54,3 @@ jobs:
       # Running a smoke test
       - name: Run container (smoke test)
         run: docker run --rm ${{ secrets.DOCKER_USERNAME }}/blockchain-rust:latest
-
-  deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Helm
-        uses: azure/setup-helm@v3
-
-      - name: Helm upgrade/install
-        run: |
-          IMAGE_TAG=${GITHUB_REF_NAME:-latest}
-          
-          helm upgrade --install blockchain-job ./blockchain-job/charts \
-            --set image.tag=${IMAGE_TAG} \
-            --namespace default \
-            --create-namespace
